@@ -14,11 +14,11 @@
 
 import gymnasium as gym
 
-from stable_baselines3 import A2C
+from stable_baselines3 import SAC
 
 env = gym.make("Walker2d-v4", render_mode="rgb_array")
 
-model = A2C("MlpPolicy", env, verbose=1)
+model = SAC("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
 model.learn(total_timesteps=20_000)
 
 vec_env = model.get_env()
