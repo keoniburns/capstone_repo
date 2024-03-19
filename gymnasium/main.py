@@ -28,5 +28,5 @@ for i in range(1000):
     obs, reward, done, info = vec_env.step(action)
     vec_env.render("human")
     # VecEnv resets automatically
-    # if done:
-    #   obs = vec_env.reset()
+    if done:
+        obs = vec_env.reset()
