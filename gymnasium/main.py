@@ -18,8 +18,8 @@ from stable_baselines3 import SAC
 
 env = gym.make("Walker2d-v4", render_mode="rgb_array")
 
-model = SAC("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
-model.learn(total_timesteps=20_000)
+model = SAC("MlpPolicy", env, verbose=1)
+model.learn(total_timesteps=2000)
 
 vec_env = model.get_env()
 obs = vec_env.reset()

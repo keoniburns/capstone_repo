@@ -31,11 +31,11 @@ os.makedirs(log_dir, exist_ok=True)
 
 def train(env, sb3_algo):
     if sb3_algo == "SAC":
-        model = SAC("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
+        model = SAC("MlpPolicy", env, verbose=1, device='cpu', tensorboard_log=log_dir)
     elif sb3_algo == "TD3":
-        model = TD3("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
+        model = TD3("MlpPolicy", env, verbose=1,  device='cpu', tensorboard_log=log_dir)
     elif sb3_algo == "A2C":
-        model = A2C("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
+        model = A2C("MlpPolicy", env, verbose=1,  device='cpu', tensorboard_log=log_dir)
     else:
         print("Algorithm not found")
         return
@@ -46,7 +46,7 @@ def train(env, sb3_algo):
         iters += 1
 
         model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False)
-        model.save(f"{model_dir}/{sb3_algo}_{TIMESTEPS*iters}")
+        model.save(f"{model_dir}/{sb3_algo}/{env.unwrapped.spec.id}_{TIMESTEPS*iters}")
 
 
 # def test(env, sb3_algo, path_to_model):
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.train:
-        gymenv = gym.make(args.gymenv, render_mode="rgb-array")
+        gymenv = gym.make(args.gymenv, render_mode="rgb_array")
         train(gymenv, args.sb3_algo)
 
     if args.test:
