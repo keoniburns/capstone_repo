@@ -100,12 +100,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.train:
-        gymenv = gym.make(args.gymenv, render_mode="rgb-array")
+        gymenv = gym.make(args.gymenv, render_mode="rgb_array")
         train(gymenv, args.sb3_algo)
 
     if args.test:
         if os.path.isfile(args.test):
-            gymenv = gym.make(args.gymenv, render_mode="human")
+            gymenv = gym.make(args.gymenv, render_mode="rgb_array")
             test(gymenv, args.sb3_algo, path_to_model=args.test)
         else:
             print(f"{args.test} not found.")
