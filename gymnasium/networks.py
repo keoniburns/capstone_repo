@@ -7,6 +7,43 @@ from tensorflow.keras.layers import Dense
 import tensorflow_probability as tfp
 
 
+class Critic(tf.keras.Model):
+
+    def __init__(self, name, hidden0=CRITIC_HIDDEN[0], hidden1=CRITIC_HIDDEN[1]):
+        self.hidden0 = hidden0
+        self.hidden1 = hidden1
+        self.net_name = name
+        self.dense0 = Dense(self.hidden0, activation='relu')
+        self.dense1 = Dense(self.hidden1, activation='relu')
+        self.q = Dense(1, activation=None)
+
+    def call(self, state, action):
+        state_action_value = self.dense0(tf.concat([state, action], axis=1))
+        state_action_value = self.dense1(state_action_value)
+
+        q_value = self.q_value(state_action_value)
+        return q_value
+
+class CriticValue(tf.keras.Model):
+    def __init__(self, name, hidden0=CRITIC_HIDDEN[0], hidden1=CRITIC_HIDDEN[1]):
+        super(CriticValue, self).__init__()
+        self.hidden0 = hidden0
+        self.hidden1 = hidden1
+        self.net_name = name
+
+        self.dense0 = Dense(self.hidden0, activation='relu')
+        self.dense1 = Dense(self.hidden1, activation='relu')
+        self.value = Dense(1, activation=None)
+
+    def call(self, state):
+        value = self.dense_0(state)
+        value = self.dense_1(value)
+
+        value = self.value(value)
+
+        return value
+
+
 #**** Actor Network ****
 class Actor(tf.keras.Model):
 
@@ -32,8 +69,8 @@ class Actor(tf.keras.Model):
         self.log_std_min = log_std_min
         self.log_std_max = log_std_max
 
-        self.dense0 = Dense(self.hidden_0, activation='relu')
-        self.dense1 = Dense(self.hidden_1, activation='relu')
+        self.dense0 = Dense(self.hidden0, activation='relu')
+        self.dense1 = Dense(self.hidden1, activation='relu')
         self.mean = Dense(self.actions_dim, activation=None)
         self.log_std = Dense(self.actions_dim, activation=None)
 
