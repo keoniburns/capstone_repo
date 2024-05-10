@@ -1,0 +1,131 @@
+{
+    "os": "Linux-6.8.7-arch1-1-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "heartbeatAt": "2024-05-03T02:26:30.644776",
+    "startedAt": "2024-05-03T02:26:30.139271",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "-e",
+        "models/SAC/Humanoid-v4_1000000.zip"
+    ],
+    "state": "running",
+    "program": "/home/kcb/school/capstone_repo/gymnasium/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "gymnasium/main.py",
+    "git": {
+        "remote": "git@github.com:keoniburns/capstone_repo.git",
+        "commit": "67f0b438fd1dd0475e1cff665a7aff02dc6d1796"
+    },
+    "email": "keoni.burns@gmail.com",
+    "root": "/home/kcb/school/capstone_repo",
+    "host": "kcb",
+    "username": "kcb",
+    "executable": "/home/kcb/capstone/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 4233.195375,
+        "min": 800.0,
+        "max": 4800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4462.198,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4558.725,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4585.223,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4530.875,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4536.078,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4107.532,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4169.774,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4553.654,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4513.89,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4385.014,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4240.942,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4397.671,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4384.14,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4597.305,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4379.083,
+            "min": 800.0,
+            "max": 4800.0
+        },
+        {
+            "current": 4310.865,
+            "min": 800.0,
+            "max": 4800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 373.9540367126465,
+            "used": 101.40052032470703
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2060",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.424579620361328
+    }
+}

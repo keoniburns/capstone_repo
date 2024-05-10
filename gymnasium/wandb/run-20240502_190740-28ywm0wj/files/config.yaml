@@ -1,0 +1,46 @@
+wandb_version: 1
+
+learning_rate_actor:
+  desc: null
+  value: 0.0005
+learning_rate_critic:
+  desc: null
+  value: 0.0005
+batch_size:
+  desc: null
+  value: 64
+arch:
+  desc: null
+  value: SAC
+env:
+  desc: null
+  value: Walker2d-v4
+_wandb:
+  desc: null
+  value:
+    python_version: 3.12.3
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1714702060.0
+    t:
+      1:
+      - 1
+      - 2
+      - 3
+      - 55
+      2:
+      - 1
+      - 2
+      - 3
+      - 55
+      3:
+      - 15
+      - 16
+      - 23
+      4: 3.12.3
+      5: 0.16.6
+      8:
+      - 5
+      13: linux-x86_64

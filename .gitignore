@@ -1,2 +1,5 @@
 /gymnasium/models/
 /gymnasium/logs/
+/__pycache__/
+/wandb/
+MUJOCO_LOG.txt
